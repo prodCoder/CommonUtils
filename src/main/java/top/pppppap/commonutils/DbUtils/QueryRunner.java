@@ -8,7 +8,7 @@ import java.util.Map;
 
 
 /**
- * TODO
+ * sql语句执行类
  *
  * @author pppppap
  * @since 2018-05-19 下午 23:53

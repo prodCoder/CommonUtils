@@ -14,7 +14,6 @@ import java.sql.*;
 
 public class DbUtils {
     public static DataSource dataSource = new ComboPooledDataSource("mysql");
-    ;
 
     public static Connection getConnection() throws SQLException {
         Connection connection = null;

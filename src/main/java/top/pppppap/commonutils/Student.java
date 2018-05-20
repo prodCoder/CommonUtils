@@ -7,22 +7,13 @@ package top.pppppap.commonutils;
  * @since 2018-05-20 上午 9:49
  */
 
-public class Student {
-    private String id;
+public class Student extends BaseEntity {
     private String userinfo_sex;
     private String user_id;
     private String userinfo_name;
     private String userinfo_tel;
     private String userinfo_birth;
     private String userinfo_email;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getUserinfo_sex() {
         return userinfo_sex;
@@ -75,8 +66,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id='" + id + '\'' +
-                ", userinfo_sex='" + userinfo_sex + '\'' +
+                "userinfo_sex='" + userinfo_sex + '\'' +
                 ", user_id='" + user_id + '\'' +
                 ", userinfo_name='" + userinfo_name + '\'' +
                 ", userinfo_tel='" + userinfo_tel + '\'' +

@@ -1,5 +1,6 @@
 package top.pppppap.commonutils.BeanUtils;
 
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,9 @@ public class BeanUtils {
      * @param map  Map保存了属性值
      **/
     public static void mapToBean(Object bean, Map<String, ? extends Object> map) {
-
+        Field[] fileds=bean.getClass().getDeclaredFields();
+        for(Field f:fileds)
+            System.out.println(f);
     }
 
     /**
@@ -50,4 +53,5 @@ public class BeanUtils {
     public static void beanListToMapList(List<Object> beanList, List<Map<String, ? extends Object>> mapList) {
 
     }
+
 }

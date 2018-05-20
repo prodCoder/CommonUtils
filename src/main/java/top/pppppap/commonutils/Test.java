@@ -1,12 +1,15 @@
 package top.pppppap.commonutils;
 
 
-import org.apache.commons.beanutils.BeanUtils;
+import top.pppppap.commonutils.BeanUtils.BeanUtils;
+import top.pppppap.commonutils.BeanUtils.ReflectionUtils;
 import top.pppppap.commonutils.DbUtils.DbUtils;
 import top.pppppap.commonutils.DbUtils.QueryRunner;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -18,9 +21,16 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
-        test();
+        test2();
     }
 
+    public static void test2() {
+        Student student = new Student();
+        Map map = new HashMap();
+//        BeanUtils.mapToBean(student, map);
+        for (Field f : ReflectionUtils.getDeclaredFields(student))
+            System.out.println(f);
+    }
 
     public static void test() {
         QueryRunner queryRunner = new QueryRunner();
@@ -28,16 +38,11 @@ public class Test {
         try {
             Map<String, Object> map = queryRunner.getMap(DbUtils.getConnection(), sql, "10");
             Student student = new Student();
-            BeanUtils.populate(student, map);
+//            BeanUtils.populate(student, map);
             System.out.println(student);
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
         }
-
     }
 
 

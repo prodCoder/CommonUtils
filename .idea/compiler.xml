@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CommonUtils" target="1.5" />
+      <module name="CommonUtils" target="7" />
       <module name="JdbcUtils" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
-        test2();
+        test();
     }
 
     public static void test2() {
@@ -39,7 +39,7 @@ public class Test {
             Map<String, Object> map = queryRunner.getMap(DbUtils.getConnection(), sql, "10");
             Student student = new Student();
 //            BeanUtils.populate(student, map);
-            System.out.println(student);
+            System.out.println(map.get(2));
         } catch (SQLException e) {
             e.printStackTrace();
         }

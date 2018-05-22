@@ -28,7 +28,7 @@ public class ReflectionUtils {
                 field = clazz.getDeclaredField(fieldName);
                 return field;
             } catch (Exception e) {
-                //这里甚么都不能抛出去。
+                //这里什么都不能抛出去。
                 //如果这里的异常打印或者往外抛，则就不会进入
             }
         }
